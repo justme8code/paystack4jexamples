@@ -13,13 +13,16 @@ import org.slf4j.LoggerFactory;
  */
 class SimplePaymentExample {
     private static final Logger logger = LoggerFactory.getLogger(SimplePaymentExample.class);
+    private static final String EMAIL1 = PaystackEnvKeyLoader.getEmail1();
+    private static final String EMAIL2 = PaystackEnvKeyLoader.getEmail2();
+    private static final String SECRET_KEY = PaystackEnvKeyLoader.getPaystackSecretKey();
 
     public static void main(String[] args) {
-        PaystackClient client = new PaystackClient(PaystackEnvKeyLoader.getPaystackSecretKey());
+        PaystackClient client = new PaystackClient(SECRET_KEY);
 
         // Initialize a simple payment
         TransactionInitRequest request = TransactionInitRequest.builder()
-                .email("bjmay302004@gmail.com")
+                .email(EMAIL1)
                 .amount(10000.00)  // ₦10,000
                 .currency(Currency.NGN)
                 .reference("PAY_" + System.currentTimeMillis())

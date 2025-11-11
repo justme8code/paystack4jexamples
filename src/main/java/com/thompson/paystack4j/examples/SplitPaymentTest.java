@@ -13,9 +13,14 @@ import java.math.BigDecimal;
 
 class SplitPaymentTest {
     private static final Logger logger = LoggerFactory.getLogger(SplitPaymentTest.class);
+    private static final String EMAIL1 = PaystackEnvKeyLoader.getEmail1();
+    private static final String EMAIL2 = PaystackEnvKeyLoader.getEmail2();
+    private static final String EMAIL3 = PaystackEnvKeyLoader.getEmail3();
+    private static final String SECRET_KEY = PaystackEnvKeyLoader.getPaystackSecretKey();
+
 
     public static void main(String[] args) {
-        PaystackClient client = new PaystackClient(PaystackEnvKeyLoader.getPaystackSecretKey());
+        PaystackClient client = new PaystackClient(SECRET_KEY);
 
         // STEP 1: Create a test subaccount for "Person B"
         logger.info("=== Creating Subaccount for Person B ===\n");
@@ -43,7 +48,7 @@ class SplitPaymentTest {
             BigDecimal platformFee = new BigDecimal("1000.00");
 
             TransactionInitRequest request = TransactionInitRequest.builder()
-                    .email("thompsonbolaji21@gmail.com")
+                    .email(EMAIL3)
                     .amount(totalAmount)
                     .currency(Currency.NGN)
                     .subaccount(subaccountCode)

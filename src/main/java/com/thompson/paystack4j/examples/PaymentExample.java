@@ -26,9 +26,14 @@ import java.math.BigDecimal;
  class PaymentExample {
     private static final Logger logger = LoggerFactory.getLogger(PaymentExample.class);
 
+    private static final String EMAIL1 = PaystackEnvKeyLoader.getEmail1();
+    private static final String EMAIL2 = PaystackEnvKeyLoader.getEmail2();
+    private static final String SECRET_KEY = PaystackEnvKeyLoader.getPaystackSecretKey();
+
+
     public static void main(String[] args) {
         // Initialize the client with your secret key
-        PaystackClient client = new PaystackClient("");
+        PaystackClient client = new PaystackClient(SECRET_KEY);
 
         // ===== STEP 1: Create Subaccount for Person B (Do this once per seller) =====
         logger.info("=== Creating Subaccount for Person B ===");

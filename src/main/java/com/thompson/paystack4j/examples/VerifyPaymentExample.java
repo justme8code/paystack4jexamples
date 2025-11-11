@@ -12,11 +12,15 @@ import java.util.Arrays;
 class VerifyPaymentExample {
 
     private static final Logger logger = LoggerFactory.getLogger(VerifyPaymentExample.class);
+    private static final String EMAIL1 = PaystackEnvKeyLoader.getEmail1();
+    private static final String EMAIL2 = PaystackEnvKeyLoader.getEmail2();
+    private static final String EMAIL3 = PaystackEnvKeyLoader.getEmail3();
+    private static final String SECRET_KEY = PaystackEnvKeyLoader.getPaystackSecretKey();
 
 
     public static void main(String[] args) {
 
-        PaystackClient client = new PaystackClient(PaystackEnvKeyLoader.getPaystackSecretKey());
+        PaystackClient client = new PaystackClient(SECRET_KEY);
 
         // Replace with the reference from your payment initialization
         // It's in the console output or you can see it on the payment page

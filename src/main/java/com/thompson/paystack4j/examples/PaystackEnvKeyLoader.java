@@ -18,4 +18,14 @@ public class PaystackEnvKeyLoader {
     public static String getPaystackSecretKey() {
         return dotenv.get("PAYSTACK_SECRET_KEY");
     }
+    public static String getEmail1(){
+        return dotenv.get("EMAIL1");
+    }
+    public static String getEmail2(){
+        return dotenv.get("EMAIL2");
+    }
+
+    public static String getEmail3(){
+        return dotenv.get("EMAIL3");
+    }
 }

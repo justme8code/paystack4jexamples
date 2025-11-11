@@ -14,16 +14,19 @@ import java.util.Scanner;
 
  class CompletePaymentFlow {
     private static final Logger logger = LoggerFactory.getLogger(CompletePaymentFlow.class);
+    private static final String EMAIL1 = PaystackEnvKeyLoader.getEmail1();
+    private static final String EMAIL2 = PaystackEnvKeyLoader.getEmail2();
+    private static final String SECRET_KEY = PaystackEnvKeyLoader.getPaystackSecretKey();
 
     public static void main(String[] args) {
-        PaystackClient client = new PaystackClient(PaystackEnvKeyLoader.getPaystackSecretKey());
+        PaystackClient client = new PaystackClient(SECRET_KEY);
         Scanner scanner = new Scanner(System.in);
 
         // STEP 1: Initialize Payment
         logger.info("=== Initialize Payment ===\n");
 
         TransactionInitRequest request = TransactionInitRequest.builder()
-                .email("bjmay302004@gmail.com")
+                .email(EMAIL1)
                 .amount(5000.00)  // ₦5,000
                 .currency(Currency.NGN)
                 .reference("PAY_" + System.currentTimeMillis())

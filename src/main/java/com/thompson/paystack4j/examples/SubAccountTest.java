@@ -9,6 +9,10 @@ import org.slf4j.LoggerFactory;
 
 class SubAccountTest {
     private static final Logger logger = LoggerFactory.getLogger(SubAccountTest.class);
+    private static final String EMAIL1 = PaystackEnvKeyLoader.getEmail1();
+    private static final String EMAIL2 = PaystackEnvKeyLoader.getEmail2();
+    private static final String EMAIL3 = PaystackEnvKeyLoader.getEmail3();
+    private static final String SECRET_KEY = PaystackEnvKeyLoader.getPaystackSecretKey();
 
     private static final PaystackClient client = new PaystackClient(PaystackEnvKeyLoader.getPaystackSecretKey());
 

@@ -14,11 +14,15 @@ import java.util.Arrays;
  */
 class WebCallbackExample {
     private static final Logger logger = LoggerFactory.getLogger(WebCallbackExample.class);
+    private static final String EMAIL1 = PaystackEnvKeyLoader.getEmail1();
+    private static final String EMAIL2 = PaystackEnvKeyLoader.getEmail2();
+    private static final String EMAIL3 = PaystackEnvKeyLoader.getEmail3();
+    private static final String SECRET_KEY = PaystackEnvKeyLoader.getPaystackSecretKey();
 
 
     // This would be a Spring/Servlet controller method
     public void handlePaymentCallback(String reference) {
-        PaystackClient client = new PaystackClient(PaystackEnvKeyLoader.getPaystackSecretKey());
+        PaystackClient client = new PaystackClient(SECRET_KEY);
 
         try {
             PaystackResponse<TransactionData> response = client.transactions().verify(reference);
