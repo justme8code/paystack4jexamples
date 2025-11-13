@@ -48,7 +48,7 @@ import java.math.BigDecimal;
         // Person B will receive ₦9,000 automatically
 
         TransactionInitRequest request = TransactionInitRequest.builder()
-                .email("[email protected]")  // Person A's email
+                .email("email")  // Person A's email
                 .amount(totalAmount)                     // Total amount
                 .currency(Currency.NGN)
                 .subaccount(personBSubaccount.getSubaccountCode()) // Person B's subaccount
@@ -90,7 +90,7 @@ import java.math.BigDecimal;
                 .accountNumber("0123456789")
                 .percentageCharge(10)  // Default 10% (can override per transaction)
                 .description("Seller account for Person B")
-                .primaryContactEmail("[email protected]")
+                .primaryContactEmail("email")
                 .primaryContactName("Person B")
                 .primaryContactPhone("+2348012345678")
                 .build();

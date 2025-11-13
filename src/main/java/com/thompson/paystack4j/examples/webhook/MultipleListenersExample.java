@@ -18,6 +18,9 @@ class MultipleListenersExample {
         dispatcher.addListener(new EmailNotificationListener());
         dispatcher.addListener(new AnalyticsListener());
 
+        dispatcher.dispatch("","");
+
+
         // All listeners will be notified of events
     }
 

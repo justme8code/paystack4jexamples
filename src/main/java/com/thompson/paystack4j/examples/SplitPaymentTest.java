@@ -25,17 +25,21 @@ class SplitPaymentTest {
         // STEP 1: Create a test subaccount for "Person B"
         logger.info("=== Creating Subaccount for Person B ===\n");
 
-        SubaccountCreateRequest subRequest = SubaccountCreateRequest.builder()
-                .businessName("BOLAJI ORETAN THOMPSON")
-                .settlementBank("171")  // GTBank (you can use any valid bank code)
-                .accountNumber("9158497042")  // This is a test account
-                .percentageCharge(10.0)
-                .build();
-
-        PaystackResponse<SubaccountData> subResponse =
+//        SubaccountCreateRequest subRequest = SubaccountCreateRequest.builder()
+//                .businessName("business name")
+//                .settlementBank("171")  // GTBank (you can use any valid bank code)
+//                .accountNumber("account number")  // This is a test account
+//                .percentageCharge(10.0)
+//                .active(true)
+//                .build();
+           /*  PaystackResponse<SubaccountData> subResponse =
                 client.subaccounts().create(subRequest);
+*/
 
-        if (subResponse.isStatus()) {
+        PaystackResponse<SubaccountData> subResponse = client.subaccounts().get("ACCT_zasz0tj36ebhasx");
+        System.out.println(subResponse.getData().getBusinessName());
+
+        /*if (subResponse.isStatus()) {
             String subaccountCode = subResponse.getData().getSubaccountCode();
             logger.info("✅ Subaccount created: {}" , subaccountCode);
             // Create split payment
@@ -68,6 +72,6 @@ class SplitPaymentTest {
                 logger.info("   - Seller gets ₦9,000 in their account");
                 logger.info("   - You get ₦1,000 in your main account");
             }
-        }
+        }*/
     }
 }

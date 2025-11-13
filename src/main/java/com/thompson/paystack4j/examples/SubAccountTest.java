@@ -31,11 +31,11 @@ class SubAccountTest {
         SubaccountCreateRequest subaccountCreateRequest = SubaccountCreateRequest.builder()
                 .businessName("Updated Business Name")
                 .settlementBank("171")  //  Example bank code
-                .accountNumber("9158497042")  // test account
+                .accountNumber("account number")  // test account
                 .percentageCharge(15.0)
                 .active(true)
                 .build();
-        PaystackResponse<SubaccountData> subaccount = client.subaccounts().update("ACCT_zasz0tj36ebhasx", subaccountCreateRequest);
+        PaystackResponse<SubaccountData> subaccount = client.subaccounts().update("subaccountcodeOrId", subaccountCreateRequest);
         logger.debug("Updated Subaccount: {}",subaccount);
     }
 }
