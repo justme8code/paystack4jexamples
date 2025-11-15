@@ -1,15 +1,9 @@
-package com.thompson.paystack4j.examples;
+package com.thompson.paystack4j.examples.base;
 
 import com.thompson.paystack.client.PaystackClient;
-import com.thompson.paystack.enums.Bearer;
-import com.thompson.paystack.enums.Currency;
-import com.thompson.paystack.models.request.SubaccountCreateRequest;
-import com.thompson.paystack.models.request.TransactionInitRequest;
 import com.thompson.paystack.models.response.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.math.BigDecimal;
 
 class SplitPaymentTest {
     private static final Logger logger = LoggerFactory.getLogger(SplitPaymentTest.class);

@@ -1,4 +1,4 @@
-package com.thompson.paystack4j.examples;
+package com.thompson.paystack4j.examples.base;
 
 import io.github.cdimascio.dotenv.Dotenv;
 

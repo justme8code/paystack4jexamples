@@ -1,4 +1,4 @@
-package com.thompson.paystack4j.examples;
+package com.thompson.paystack4j.examples.base;
 
 import com.thompson.paystack.client.PaystackClient;
 import com.thompson.paystack.enums.Currency;
